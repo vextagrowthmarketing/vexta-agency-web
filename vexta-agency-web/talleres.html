@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talleres | Vexta Agency</title>
+    <meta name="description" content="Conocé los talleres de Vexta Agency: redes sociales, contenido y automatización para profesionales que quieren crecer.">
+    <link rel="icon" type="image/png" href="assets/vexta-agency-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --bg-card: #151C2C;
+            --bg-card-hover: #1E293B;
+            --primary: #F2B632;
+            --primary-gradient: linear-gradient(135deg, #F5C247 0%, #C76834 52%, #7A2D8A 100%);
+            --accent: #8C3B91;
+            --accent-gradient: linear-gradient(135deg, #F5C247 0%, #8C3B91 100%);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(242, 182, 50, 0.3);
+            --shadow-glow: 0 0 35px rgba(140, 59, 145, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            line-height: 1.25;
+            padding-bottom: 6px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #0F172A;
+            box-shadow: 0 4px 20px rgba(242, 182, 50, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(242, 182, 50, 0.45);
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(242, 182, 50, 0.1);
+            border: 1px solid rgba(242, 182, 50, 0.22);
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.3;
+            padding-bottom: 4px;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 650px;
+            margin: 0 auto 48px auto;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo img {
+            width: 29px;
+            height: 45px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 12px rgba(140, 59, 145, 0.25));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 170px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.3;
+            padding-bottom: 8px;
+            letter-spacing: -1px;
+            margin: 0 auto 20px auto;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Workshops */
+        .workshops {
+            padding: 40px 0 100px;
+        }
+
+        .workshop-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .workshop-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .workshop-video {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .workshop-video iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .workshop-thumb {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(4px) brightness(0.5);
+            transform: scale(1.05);
+        }
+
+        .workshop-lock {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 14px;
+            padding: 24px;
+            background: rgba(11, 15, 25, 0.35);
+        }
+
+        .workshop-lock-icon {
+            font-size: 2.2rem;
+        }
+
+        .workshop-lock-text {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            max-width: 320px;
+            margin: 0;
+        }
+
+        .workshop-info h3 {
+            font-size: 1.6rem;
+            line-height: 1.35;
+            padding-bottom: 4px;
+            margin-bottom: 14px;
+        }
+
+        .workshop-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .workshop-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Testimonials - WhatsApp style */
+        .testimonials {
+            padding: 40px 0 100px;
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .wa-chat {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #0B141A;
+            background-image:
+                radial-gradient(circle at 20px 20px, rgba(255,255,255,0.025) 2px, transparent 2px),
+                radial-gradient(circle at 60px 60px, rgba(255,255,255,0.025) 2px, transparent 2px);
+            background-size: 80px 80px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .wa-bubble {
+            background: #1F2C34;
+            border-radius: 10px;
+            padding: 10px 14px 8px 14px;
+            margin-bottom: 16px;
+            max-width: 88%;
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .wa-bubble::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -8px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid #1F2C34;
+            border-left: 8px solid transparent;
+        }
+
+        .wa-sender {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.4;
+            padding-bottom: 2px;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+
+        .wa-text {
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            white-space: pre-line;
+        }
+
+        .wa-meta {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .wa-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .wa-check {
+            color: #53BDEB;
+            font-size: 0.75rem;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 0 0 100px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.5rem; }
+            .workshop-card { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+        /* WhatsApp Floating Button */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            z-index: 2000;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+        }
+
+        @media (max-width: 640px) {
+            .wa-float {
+                width: 52px;
+                height: 52px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo" aria-label="Vexta Agency - Inicio">
+                    <img src="assets/vexta-agency-logo.png" alt="Logo de Vexta Agency">
+                    Vexta <span>Agency</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#problema">El Problema</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#calculadora">Calculadora ROI</a></li>
+                    <li><a href="index.html#proceso">Metodología</a></li>
+                    <li><a href="talleres.html" class="active">Talleres</a></li>
+                </ul>
+                <a href="index.html#contacto" class="btn btn-primary">Auditoría Gratuita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="section-tag">Formación & Talleres</span>
+            <h1>Nuestros <span class="gradient-text">Talleres</span></h1>
+            <p>Espacios de aprendizaje práctico para que emprendedoras y profesionales potencien sus redes, su contenido y su forma de trabajar.</p>
+        </div>
+    </section>
+
+    <!-- Workshops -->
+    <section class="workshops">
+        <div class="container">
+            <div class="workshop-card">
+                <div class="workshop-video">
+                    <img src="https://img.youtube.com/vi/BEwYICAjn0U/hqdefault.jpg" alt="Vista previa del Taller de Redes Online" class="workshop-thumb">
+                    <div class="workshop-lock">
+                        <div class="workshop-lock-icon">🔒</div>
+                        <p class="workshop-lock-text">Contactate conmigo para acceder al enlace</p>
+                        <a href="https://wa.me/1165005679?text=Hola%20Bren!%20Quiero%20acceder%20al%20Taller%20de%20Redes%20Online" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Escribime por WhatsApp</a>
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <span class="section-tag">Taller Online</span>
+                    <h3>Taller de Redes Online</h3>
+                    <p>Aprendé a manejar tus redes sociales de forma estratégica: contenido, publicación y comunicación de tu marca, pensado especialmente para profesionales que recién empiezan a mostrarse online.</p>
+                    <div class="workshop-tags">
+                        <span class="tag">Redes Sociales</span>
+                        <span class="tag">Contenido</span>
+                        <span class="tag">Marca Personal</span>
+                    </div>
+                    <a href="https://wa.me/1165005679?text=Hola%20Bren!%20Quiero%20acceder%20al%20Taller%20de%20Redes%20Online" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactate para Acceder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-tag">Lo que dicen de nosotras</span>
+                <h2 class="section-title">Testimonios de nuestras alumnas</h2>
+                <p class="section-desc">Así se sintieron las emprendedoras que pasaron por nuestros talleres.</p>
+            </div>
+
+            <div class="wa-chat">
+                <div class="wa-bubble">
+                    <div class="wa-sender">Alumna del taller</div>
+                    <div class="wa-text">Hola Bren disculpa la hora, no quería dejar de mostrarte que me animé y de a poco estoy haciendo contenido. Gracias por todo lo que nos enseñaste ✨</div>
+                    <div class="wa-meta"><span class="wa-time">22:11</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Milagros Pavon Nails</div>
+                    <div class="wa-text">Hola chicas buen día!! Me animé a hacer un reels con algo que no tenía NI PENSADO compartir en redes, les muestro así me corrigen si lo hice bien 😂</div>
+                    <div class="wa-meta"><span class="wa-time">12:00</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Eugenia | @majoznailbar</div>
+                    <div class="wa-text">Hola chicas! En primer lugar gracias Mica! Por brindar tu espacio para que emprendedoras como las que estuvimos ayer podamos adquirir conocimientos que son importantes para nuestras profesiones. Gracias Bren! El taller me re gustó! El taller de ayer fue un antes y después. Ahora a poner manos a la obra, mente y mucho amor propio!</div>
+                    <div class="wa-meta"><span class="wa-time">14:06</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Ludmila Radovancich</div>
+                    <div class="wa-text">Me fue feliz y con muchas ganas, gracias por su buena predisposición, se nota que aman lo que hacen porque cuando salí de ahí mi mente y mi energía era otra. Realmente me hizo un click internamente todo lo que dijiste, me resonó en todos los sentidos, gracias por tan lindo curso.</div>
+                    <div class="wa-meta"><span class="wa-time">13:33</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Florencia | @flormaidananails</div>
+                    <div class="wa-text">Hola chicas buenas!!! La verdad muy conforme con la capacitación de ayer. Buscaba algo así, una capacitación de este estilo. La verdad súper contenta, la hora se pasó volando. Gracias por su paciencia, tiempo, dedicación y amor a la hora de compartirnos todo su conocimiento tanto profesionalmente como emocionalmente.</div>
+                    <div class="wa-meta"><span class="wa-time">13:14</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Florencia | @flormaidananails</div>
+                    <div class="wa-text">Aahh y para la capacitación de Canva re estoy 🤣✌️</div>
+                    <div class="wa-meta"><span class="wa-time">13:16</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Maca | Luna Nails</div>
+                    <div class="wa-text">Hola Mica y Brenda. La verdad fue muy lindo el día de ayer, creo que emocionante para cada una de las que estuvimos ahí porque se tocaron temas que cada una se sintió identificada de manera muy personal. Mil gracias por dar su testimonio, ser empáticas con otras mujeres y darnos el cachetazo a la realidad que muchas necesitábamos.</div>
+                    <div class="wa-meta"><span class="wa-time">12:52</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Maca | Luna Nails</div>
+                    <div class="wa-text">Gracias una vez más porque nos dieron el empujón para sacar lo mejor de nosotras, despertaron las ganas de ir por todo y nos dieron la fe y la esperanza de que así va a ser si lo propongo. Gracias ❤️</div>
+                    <div class="wa-meta"><span class="wa-time">12:56</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Valen | Store</div>
+                    <div class="wa-text">Se me puso la piel de gallina al leer este primer testimonio. ¡Fue un placer haber compartido mi experiencia con ustedes! Anímense siempre, porque tienen todas las herramientas a su disposición y cuentan con profesionales como ellas. ¡Vamos, chicas, no aflojen!</div>
+                    <div class="wa-meta"><span class="wa-time">12:47</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Milagros Pavon Nails</div>
+                    <div class="wa-text">Micaaa!! Buen día. Primeramente agradecerte porque las oportunidades que les das a otros profesionales a capacitarnos son de mucha ayuda para nosotras también! Fue un día que marcó un antes y después en mi cabeza y también en mi corazón. Estoy RE agradecida con vos porque sos una profesional excelente y de influencia para mi vida.</div>
+                    <div class="wa-meta"><span class="wa-time">12:40</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Jenny | Optimización de perfil</div>
+                    <div class="wa-text">Muchas gracias Mica, gracias por brindarnos tanto conocimiento, Brenda una genia y el cierre con Abril fue la frutilla del postre. Hermoso todo! Salí súper motivada, con muchas ganas de crear.</div>
+                    <div class="wa-meta"><span class="wa-time">23:22</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Alumna del taller</div>
+                    <div class="wa-text">Gracias Mica y Bren, me llevo conocimientos valiosos y herramientas que las estaré implementando para potenciar mi trabajo, el curso me hizo ver cosas que no pensé que eran tan importantes a la hora de publicar, me fui satisfecha 👌</div>
+                    <div class="wa-meta"><span class="wa-time">23:18</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Alumna del taller</div>
+                    <div class="wa-text">Me fui feliz y motivada, aprendí muchísimo, les agradezco a las dos por su profesionalismo y por brindar un material de tan excelente calidad. Ahora quiero grabar todo 🤣 Gracias</div>
+                    <div class="wa-meta"><span class="wa-time">23:15</span><span class="wa-check">✓✓</span></div>
+                </div>
+
+                <div class="wa-bubble">
+                    <div class="wa-sender">Tefi Ledesma</div>
+                    <div class="wa-text">Mica gracias a vos por abrirnos las puertas de tu hermoso estudio, gracias por no guardarse nada. Vos y Bren son increíbles, me hubiese encantado quedarme hasta que termine. Se nota el amor que le ponen a todo, mil gracias y nos vamos a seguir viendo.</div>
+                    <div class="wa-meta"><span class="wa-time">23:09</span><span class="wa-check">✓✓</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <a href="https://wa.me/1165005679?text=Hola%20Bren!%20Quiero%20acceder%20al%20Taller%20de%20Redes%20Online" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactate para Acceder al Taller</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Vexta Agency. Especialistas en Optimización de Procesos y Automatización de Marketing.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1165005679" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.001 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.507.688 4.853 1.885 6.865L2.667 29.333l6.64-1.843A13.28 13.28 0 0 0 16.001 29.333c7.36 0 13.333-5.973 13.333-13.333S23.361 2.667 16.001 2.667Zm0 24.222c-2.187 0-4.222-.63-5.94-1.716l-.427-.254-3.94 1.094 1.06-3.84-.28-.44a10.86 10.86 0 0 1-1.696-5.733c0-6.02 4.902-10.921 10.923-10.921 6.02 0 10.921 4.901 10.921 10.921 0 6.021-4.901 10.889-10.921 10.889Zm5.98-8.157c-.328-.164-1.938-.957-2.239-1.066-.3-.11-.518-.164-.737.164-.218.328-.845 1.066-1.036 1.284-.19.219-.382.246-.71.082-.328-.164-1.384-.51-2.636-1.626-.974-.868-1.632-1.942-1.823-2.27-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.219-.328.328-.546.11-.219.055-.41-.027-.574-.082-.164-.737-1.777-1.01-2.434-.266-.64-.536-.553-.737-.563l-.628-.011c-.219 0-.574.082-.874.41-.3.328-1.147 1.12-1.147 2.733s1.174 3.171 1.338 3.39c.164.219 2.31 3.526 5.598 4.944.782.338 1.393.54 1.87.69.786.25 1.5.214 2.065.13.63-.094 1.938-.793 2.211-1.558.273-.766.273-1.421.191-1.558-.082-.137-.3-.219-.628-.383Z"/>
+        </svg>
+    </a>
+
+</body>
+</html>

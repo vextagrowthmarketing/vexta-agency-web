@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexta Agency | Optimización de Procesos y Marketing Automation</title>
+    <meta name="description" content="Vexta Agency diseña sistemas de automatización, marketing e inteligencia artificial para escalar negocios con procesos más eficientes.">
+    <link rel="icon" type="image/png" href="assets/vexta-agency-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --bg-card: #151C2C;
+            --bg-card-hover: #1E293B;
+            --primary: #F2B632;
+            --primary-gradient: linear-gradient(135deg, #F5C247 0%, #C76834 52%, #7A2D8A 100%);
+            --accent: #8C3B91;
+            --accent-gradient: linear-gradient(135deg, #F5C247 0%, #8C3B91 100%);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(242, 182, 50, 0.3);
+            --shadow-glow: 0 0 35px rgba(140, 59, 145, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #0F172A;
+            box-shadow: 0 4px 20px rgba(242, 182, 50, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(242, 182, 50, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(242, 182, 50, 0.1);
+            border: 1px solid rgba(242, 182, 50, 0.22);
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 650px;
+            margin: 0 auto 48px auto;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo img {
+            width: 29px;
+            height: 45px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 12px rgba(140, 59, 145, 0.25));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            padding: 170px 0 90px;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: var(--bg-dark);
+        }
+
+        .hero-grid {
+            max-width: 760px;
+            margin-left: 0;
+            margin-right: auto;
+            margin-bottom: 64px;
+        }
+
+        .hero-copy {
+            text-align: left;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(140, 59, 145, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(242, 182, 50, 0.1) 0%, transparent 45%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero > .container {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 900px;
+            margin: 0 0 24px 0;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 0 40px 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: flex-start;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 900px;
+            margin: 0;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 60px rgba(3, 7, 18, 0.3);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Tech Stack / Integration Banner */
+        .integrations {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(21, 28, 44, 0.4);
+            text-align: center;
+        }
+
+        .integrations p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .tech-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.7;
+        }
+
+        .tech-badge {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        /* Pain Points vs Solution */
+        .comparison {
+            padding: 100px 0;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .comp-card {
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .comp-card.old {
+            background: rgba(239, 68, 68, 0.03);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .comp-card.new {
+            background: rgba(242, 182, 50, 0.03);
+            border-color: rgba(242, 182, 50, 0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .comp-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .comp-list {
+            list-style: none;
+        }
+
+        .comp-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .comp-list li span {
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(242, 182, 50, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Calculator Widget */
+        .calculator-section {
+            padding: 100px 0;
+        }
+
+        .calc-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-hover);
+            border-radius: 24px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .calc-controls label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .calc-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #334155;
+            outline: none;
+            margin-bottom: 28px;
+            accent-color: var(--primary);
+        }
+
+        .calc-result {
+            background: rgba(242, 182, 50, 0.05);
+            border: 1px solid rgba(242, 182, 50, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .calc-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin: 12px 0;
+        }
+
+        /* Process Steps */
+        .process {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(242, 182, 50, 0.22);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .step-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            padding-right: 30px;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Accordion */
+        .faq {
+            padding: 100px 0;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px 24px;
+            color: var(--text-muted);
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-hover);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.75rem; }
+            .hero-grid { max-width: 680px; }
+            .comparison-grid, .services-grid, .calc-box, .process-steps {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { min-height: 780px; padding: 130px 0 70px; }
+            .hero-copy { text-align: center; }
+            .hero h1, .hero p { margin-left: auto; margin-right: auto; }
+            .hero-cta { flex-direction: column; }
+            .hero-cta { justify-content: center; }
+            .hero-cta .btn { width: 100%; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+        /* WhatsApp Floating Button */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            z-index: 2000;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+        }
+
+        @media (max-width: 640px) {
+            .wa-float {
+                width: 52px;
+                height: 52px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo" aria-label="Vexta Agency - Inicio">
+                    <img src="assets/vexta-agency-logo.png" alt="Logo de Vexta Agency">
+                    Vexta <span>Agency</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#problema">El Problema</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#calculadora">Calculadora ROI</a></li>
+                    <li><a href="#proceso">Metodología</a></li>
+                    <li><a href="talleres.html">Talleres</a></li>
+                </ul>
+                <a href="#contacto" class="btn btn-primary">Auditoría Gratuita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="section-tag">Agencia de Optimización & Automatización</span>
+                    <h1>Multiplica tus ventas <br><span class="gradient-text">sin multiplicar tu trabajo</span></h1>
+                    <p>Diseñamos e implementamos sistemas inteligentes, automatización de marketing y flujos de trabajo con IA, con acompañamiento cercano para que cada solución se sienta realmente tuya.</p>
+
+                    <div class="hero-cta">
+                        <a href="#contacto" class="btn btn-primary">Agendar Auditoría de Procesos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>-75%</h3>
+                    <p>Tiempo dedicado a tareas manuales</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3x</h3>
+                    <p>Velocidad de respuesta a nuevos leads</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Procesos documentados y escalables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <div class="integrations">
+        <div class="container">
+            <p>Conectamos y optimizamos tus herramientas favoritas</p>
+            <div class="tech-logos">
+                <span class="tech-badge">⚡ Make (Integromat)</span>
+                <span class="tech-badge">🔗 Zapier</span>
+                <span class="tech-badge">🎯 HubSpot CRM</span>
+                <span class="tech-badge">🤖 OpenAI / Gemini</span>
+                <span class="tech-badge">📊 ActiveCampaign</span>
+                <span class="tech-badge">📋 Notion / ClickUp</span>
+                <span class="tech-badge">💬 WhatsApp Business API</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pain vs Solution -->
+    <section class="comparison" id="problema">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-tag">El Diagnóstico</span>
+                <h2 class="section-title">¿Tu equipo opera en el caos o en piloto automático?</h2>
+                <p class="section-desc">El crecimiento de la mayoría de agencias y negocios se frena por cuellos de botella operativos internos.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comp-card old">
+                    <h3 style="color: #EF4444;">❌ Operación Tradicional (Lenta y Caótica)</h3>
+                    <ul class="comp-list">
+                        <li><span>•</span> Responden a clientes potenciales horas (o días) después.</li>
+                        <li><span>•</span> Copian y pegan datos manualmente entre Excel, CRM y correo.</li>
+                        <li><span>•</span> Se pierden leads por falta de seguimiento sistemático.</li>
+                        <li><span>•</span> Cada nuevo cliente implica contratar más personal de gestión.</li>
+                        <li><span>•</span> Información dispersa en WhatsApp, notas y correos personales.</li>
+                    </ul>
+                </div>
+
+                <div class="comp-card new">
+                    <h3 style="color: var(--primary);">⚡ Sistema Vexta (Escalable y Automatizado)</h3>
+                    <ul class="comp-list">
+                        <li><span>•</span> Respuesta inmediata (< 2 min) y calificación automática 24/7.</li>
+                        <li><span>•</span> Integración total: la información fluye sola entre sistemas.</li>
+                        <li><span>•</span> Enrutamiento y secuencias de nutriendo sin olvidar ningún lead.</li>
+                        <li><span>•</span> Capacidad de procesar 10x más clientes sin aumentar costes fijos.</li>
+                        <li><span>•</span> Base de conocimiento unificada y tableros en tiempo real.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Sistemas Diseñados para Escalar</h2>
+                <p class="section-desc">No vendemos tareas sueltas; creamos la infraestructura operativa que tu agencia necesita para crecer de forma limpia.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Automatización de Leads & CRM</h3>
+                    <p>Captura, asigna y da seguimiento automático a prospectos. Desde el formulario web directamente a la agenda de tu equipo comercial.</p>
+                    <div class="service-tags">
+                        <span class="tag">WhatsApp API</span>
+                        <span class="tag">HubSpot</span>
+                        <span class="tag">Calendly</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>SOPs & Arquitectura de Trabajo</h3>
+                    <p>Estandarizamos y documentamos todos los procesos de tu negocio en Notion o ClickUp para que tu equipo sepa exactamente qué hacer.</p>
+                    <div class="service-tags">
+                        <span class="tag">Notion</span>
+                        <span class="tag">ClickUp</span>
+                        <span class="tag">Loom SOPs</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Integración de IA Operativa</h3>
+                    <p>Implementamos agentes de inteligencia artificial para redactar borradores, resumir reuniones y clasificar correos automáticamente.</p>
+                    <div class="service-tags">
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">Prompts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Widget -->
+    <section class="calculator-section" id="calculadora">
+        <div class="container">
+            <div class="calc-box">
+                <div class="calc-controls">
+                    <span class="section-tag">Calculadora de Eficiencia</span>
+                    <h2 style="font-size:2rem; margin-bottom:16px;">¿Cuánto tiempo pierde tu equipo?</h2>
+                    <p style="color:var(--text-muted); margin-bottom:24px;">Desliza los valores para estimar las horas mensuales que podrías automatizar inmediatamente.</p>
+                    
+                    <label for="team-size">Tamaño del equipo: <span id="team-val" style="color:var(--primary); font-weight:800;">5</span> personas</label>
+                    <input type="range" id="team-size" class="calc-slider" min="1" max="50" value="5">
+
+                    <label for="hours-spent">Horas semanales en tareas repetitivas/persona: <span id="hours-val" style="color:var(--primary); font-weight:800;">10</span> hrs</label>
+                    <input type="range" id="hours-spent" class="calc-slider" min="2" max="25" value="10">
+                </div>
+
+                <div class="calc-result">
+                    <p style="text-transform:uppercase; font-size:0.85rem; letter-spacing:1px; color:var(--text-muted);">Ahorro Operativo Estimado</p>
+                    <div class="calc-number" id="saved-hours">200 hrs</div>
+                    <p style="color:var(--text-main); font-weight:600;">recuperadas al mes para tareas estratégicas</p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Equivalente a recuperar aprox. <span id="saved-money" style="color:var(--primary); font-weight:bold;">$3,000 USD</span>/mes en costes operativos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-tag">Metodología de Trabajo</span>
+                <h2 class="section-title">4 Pasos hacia la Eficiencia Absoluta</h2>
+                <p class="section-desc">Un enfoque metódico para transformar tu caos operativo en una máquina bien engrasada.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-card">
+                    <span class="step-num">01</span>
+                    <h4>Auditoría & Mapas de Proceso</h4>
+                    <p>Analizamos cada tarea manual, herramienta y cuello de botella de tu flujo actual.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-num">02</span>
+                    <h4>Diseño de Arquitectura</h4>
+                    <p>Creamos el plano del sistema optimizado e integraciones antes de tocar una sola línea de código.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-num">03</span>
+                    <h4>Construcción & Automatización</h4>
+                    <p>Conectamos tus plataformas con Make/Zapier, configuramos el CRM e implementamos las plantillas.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-num">04</span>
+                    <h4>Capacitación & Handover</h4>
+                    <p>Entrenamos a tu equipo con videos SOP para garantizar una adopción del 100% sin fricción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center;">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2 class="section-title">Resuelve tus Dudas</h2>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Tengo que cambiar todas las herramientas que ya uso?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    No. Nuestro objetivo es optimizar y conectar lo que ya utilizas (Google Workspace, WhatsApp, tu CRM actual, etc.). Solo sugeriremos cambiar de herramienta si identificamos que una solución actual limita severamente tu crecimiento.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cuánto tiempo tarda una implementación típica?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Depende de la complejidad. Un sistema de automatización de leads y CRM básico toma de 1 a 2 semanas. Un rediseño operativo integral para una agencia suele tomar entre 3 y 5 semanas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Qué pasa si una automatización falla en el futuro?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Entregamos todos los flujos con alertas automáticas de error y ofrecemos un periodo de soporte y mantenimiento post-implementación para asegurar que todo funcione al 100%.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-box">
+                <div style="text-align: center; margin-bottom: 36px;">
+                    <span class="section-tag">Paso Final</span>
+                    <h2 style="font-size: 2.2rem; margin-bottom: 12px;">Solicita tu Auditoría de Procesos Gratuita</h2>
+                    <p style="color: var(--text-muted);">Analizaremos tu flujo de trabajo actual e identificaremos 3 automatizaciones de alto impacto sin compromiso.</p>
+                </div>
+
+                <form id="contact-form" name="auditoria-gratuita" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="auditoria-gratuita">
+                    <p style="display:none;">
+                        <label>No completar si sos humano: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Ej. Carlos Mendoza" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo corporativo</label>
+                            <input type="email" name="email" class="form-control" placeholder="carlos@tuagencia.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Sitio web o empresa</label>
+                            <input type="text" name="empresa" class="form-control" placeholder="www.tuagencia.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Tamaño del equipo</label>
+                            <select name="tamano_equipo" class="form-control">
+                                <option>1 - 5 personas</option>
+                                <option>6 - 15 personas</option>
+                                <option>16 - 50 personas</option>
+                                <option>+50 personas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>¿Cuál es tu mayor cuello de botella operativo hoy?</label>
+                        <textarea name="mensaje" class="form-control" rows="4" placeholder="Ej. Perdemos mucho tiempo respondiendo prospectos manualmente y organizando tareas en Excel..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.1rem; margin-top: 12px;">Reservar Auditoría Sin Costo</button>
+                    <p id="form-status" style="text-align:center; margin-top:16px; font-weight:600; display:none;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Vexta Agency. Especialistas en Optimización de Procesos y Automatización de Marketing.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JS -->
+    <script>
+        // Calculator logic
+        const teamInput = document.getElementById('team-size');
+        const hoursInput = document.getElementById('hours-spent');
+        const teamVal = document.getElementById('team-val');
+        const hoursVal = document.getElementById('hours-val');
+        const savedHours = document.getElementById('saved-hours');
+        const savedMoney = document.getElementById('saved-money');
+
+        function updateCalc() {
+            const team = parseInt(teamInput.value);
+            const hours = parseInt(hoursInput.value);
+            
+            teamVal.textContent = team;
+            hoursVal.textContent = hours;
+
+            // Calculation: 80% of repetitive hours saved * 4.33 weeks
+            const monthlySaved = Math.round(team * hours * 4.33 * 0.8);
+            const moneySaved = Math.round(monthlySaved * 15); // Average $15/hr operational cost
+
+            savedHours.textContent = monthlySaved + ' hrs';
+            savedMoney.textContent = '$' + moneySaved.toLocaleString() + ' USD';
+        }
+
+        teamInput.addEventListener('input', updateCalc);
+        hoursInput.addEventListener('input', updateCalc);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Contact form -> Netlify Forms (AJAX submit)
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        function encodeFormData(data) {
+            return Object.keys(data)
+                .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+                .join('&');
+        }
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const payload = {};
+                formData.forEach((value, key) => { payload[key] = value; });
+
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: encodeFormData(payload)
+                })
+                .then(() => {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = 'var(--primary)';
+                    formStatus.textContent = '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en menos de 24 horas.';
+                    contactForm.reset();
+                })
+                .catch(() => {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#EF4444';
+                    formStatus.textContent = 'Hubo un problema al enviar. Por favor, escribinos directo por WhatsApp.';
+                });
+            });
+        }
+    </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1165005679" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.001 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.507.688 4.853 1.885 6.865L2.667 29.333l6.64-1.843A13.28 13.28 0 0 0 16.001 29.333c7.36 0 13.333-5.973 13.333-13.333S23.361 2.667 16.001 2.667Zm0 24.222c-2.187 0-4.222-.63-5.94-1.716l-.427-.254-3.94 1.094 1.06-3.84-.28-.44a10.86 10.86 0 0 1-1.696-5.733c0-6.02 4.902-10.921 10.923-10.921 6.02 0 10.921 4.901 10.921 10.921 0 6.021-4.901 10.889-10.921 10.889Zm5.98-8.157c-.328-.164-1.938-.957-2.239-1.066-.3-.11-.518-.164-.737.164-.218.328-.845 1.066-1.036 1.284-.19.219-.382.246-.71.082-.328-.164-1.384-.51-2.636-1.626-.974-.868-1.632-1.942-1.823-2.27-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.219-.328.328-.546.11-.219.055-.41-.027-.574-.082-.164-.737-1.777-1.01-2.434-.266-.64-.536-.553-.737-.563l-.628-.011c-.219 0-.574.082-.874.41-.3.328-1.147 1.12-1.147 2.733s1.174 3.171 1.338 3.39c.164.219 2.31 3.526 5.598 4.944.782.338 1.393.54 1.87.69.786.25 1.5.214 2.065.13.63-.094 1.938-.793 2.211-1.558.273-.766.273-1.421.191-1.558-.082-.137-.3-.219-.628-.383Z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
