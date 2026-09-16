@@ -554,6 +554,54 @@
         }
 
         /* FAQ Accordion */
+        /* Talleres Banner */
+        .talleres-banner {
+            padding: 20px 0 80px;
+        }
+
+        .talleres-banner-inner {
+            background: var(--primary-gradient);
+            border-radius: 24px;
+            padding: 40px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            box-shadow: 0 20px 60px rgba(140, 59, 145, 0.25);
+        }
+
+        .talleres-banner-copy .section-tag {
+            background: rgba(15, 23, 42, 0.25);
+            border-color: rgba(15, 23, 42, 0.3);
+            color: #0F172A;
+        }
+
+        .talleres-banner-copy h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .talleres-banner-copy p {
+            color: rgba(15, 23, 42, 0.8);
+            font-size: 1rem;
+            max-width: 480px;
+            margin: 0;
+        }
+
+        .talleres-banner-btn {
+            background: #0F172A;
+            color: #F8FAFC;
+            box-shadow: none;
+            flex-shrink: 0;
+        }
+
+        .talleres-banner-btn:hover {
+            background: #1E293B;
+        }
+
         .faq {
             padding: 100px 0;
         }
@@ -774,6 +822,17 @@
             .contact-box { padding: 28px 20px; }
             .contact-title { font-size: 1.4rem !important; line-height: 1.3; }
 
+            /* Talleres Banner */
+            .talleres-banner-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 24px;
+                gap: 20px;
+            }
+            .talleres-banner-copy h2 { font-size: 1.4rem; }
+            .talleres-banner-copy p { font-size: 0.9rem; max-width: 100%; }
+            .talleres-banner-btn { width: 100%; }
+
             .form-row { grid-template-columns: 1fr; }
         }
 
@@ -828,9 +887,6 @@
                     Vexta <span>Agency</span>
                 </a>
                 <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
-                <label for="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menú">
-                    <span></span><span></span><span></span>
-                </label>
                 <ul class="nav-links">
                     <li><a href="#problema">El Problema</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -1035,6 +1091,20 @@
         </div>
     </section>
 
+    <!-- Talleres Banner -->
+    <section class="talleres-banner">
+        <div class="container">
+            <div class="talleres-banner-inner">
+                <div class="talleres-banner-copy">
+                    <span class="section-tag">Formación</span>
+                    <h2>¿Ya conocés nuestros Talleres?</h2>
+                    <p>Aprendé a potenciar tus redes y tu contenido con nuestros talleres prácticos, con testimonios reales de quienes ya pasaron por ellos.</p>
+                </div>
+                <a href="talleres.html" class="btn btn-primary talleres-banner-btn">Ver Talleres</a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="container" style="max-width: 800px;">
@@ -1215,6 +1285,11 @@
             <path d="M16.001 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.507.688 4.853 1.885 6.865L2.667 29.333l6.64-1.843A13.28 13.28 0 0 0 16.001 29.333c7.36 0 13.333-5.973 13.333-13.333S23.361 2.667 16.001 2.667Zm0 24.222c-2.187 0-4.222-.63-5.94-1.716l-.427-.254-3.94 1.094 1.06-3.84-.28-.44a10.86 10.86 0 0 1-1.696-5.733c0-6.02 4.902-10.921 10.923-10.921 6.02 0 10.921 4.901 10.921 10.921 0 6.021-4.901 10.889-10.921 10.889Zm5.98-8.157c-.328-.164-1.938-.957-2.239-1.066-.3-.11-.518-.164-.737.164-.218.328-.845 1.066-1.036 1.284-.19.219-.382.246-.71.082-.328-.164-1.384-.51-2.636-1.626-.974-.868-1.632-1.942-1.823-2.27-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.219-.328.328-.546.11-.219.055-.41-.027-.574-.082-.164-.737-1.777-1.01-2.434-.266-.64-.536-.553-.737-.563l-.628-.011c-.219 0-.574.082-.874.41-.3.328-1.147 1.12-1.147 2.733s1.174 3.171 1.338 3.39c.164.219 2.31 3.526 5.598 4.944.782.338 1.393.54 1.87.69.786.25 1.5.214 2.065.13.63-.094 1.938-.793 2.211-1.558.273-.766.273-1.421.191-1.558-.082-.137-.3-.219-.628-.383Z"/>
         </svg>
     </a>
+
+    <!-- Mobile Menu Floating Button (visual button; toggles #nav-toggle checkbox inside header) -->
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
 
 </body>
 </html>
